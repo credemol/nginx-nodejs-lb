@@ -41,6 +41,15 @@ Open your web browser and navigate following url
 * [http://localhost:8081](http://localhost:8081)
 * [http://localhost:8082](http://localhost:8082)
 
+In case you are using Docker Toolbox, check the IP address which your docker machine is using by running following command
+
+```
+$ docker-machine ip
+```
+The IP address can be different. If then use your docker machine IP address
+* [http://192.168.99.100:8081](http://192.168.99.100:8081)
+* [http://192.168.99.100:8082](http://192.168.99.100:8082)
+
 ### Containerize Nginx
 ```
 $ cd nginx-docker
@@ -57,6 +66,14 @@ $ cd ..
 
 Open your web browser(Firefox recommended) and navigate following url and click Refresh Button several times
 * [http://localhost:8080](http://localhost:8080)
+
+In case you are using Docker Toolbox, check the IP address which your docker machine is using by running following command
+
+```
+$ docker-machine ip
+```
+The IP address can be different. If then use your docker machine IP address
+* [http://192.168.99.100:8080](http://192.168.99.100:8080)
 
 ## Using Docker-Compose
 
@@ -83,6 +100,16 @@ $ docker-compose up --scale app=2 -d
 
 Open your web browser(Firefox recommended) and navigate following url and click Refresh Button several times
 * [http://localhost:8080](http://localhost:8080)
+
+In case you are using Docker Toolbox, check the IP address which your docker machine is using by running following command
+
+```
+$ docker-machine ip
+```
+The IP address can be different. If then use your docker machine IP address
+* [http://192.168.99.100:8080](http://192.168.99.100:8080)
+
+
 
 ### Clean up Docker Compose
 ```
