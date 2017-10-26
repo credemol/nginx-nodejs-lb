@@ -2,7 +2,7 @@
 This project is designed for docker trainging workshop
 
 
-## Git Clone & Initialize 
+## Git Clone & Initialize the Project
 ```
 $ mkdir nginx-nodejs-lb
 $ cd nginx-nodejs-lb
@@ -43,7 +43,7 @@ Open your web browser and navigate following url
 
 ### Containerize Nginx
 ```
-cd nginx-docker
+$ cd nginx-docker
 
 $ docker build -t load-balance-nginx .
 
@@ -55,5 +55,36 @@ $ docker container ls
 $ cd ..
 ```
 
-Open your web browser and navigate following url and click Refresh Button several times
+Open your web browser(Firefox recommended) and navigate following url and click Refresh Button several times
 * [http://localhost:8080](http://localhost:8080)
+
+## Using Docker-Compose
+
+```
+$ git reset --hard
+$ git checkout docker-compose
+```
+
+see if nginx-docker/nginx.conf file has been changed.
+
+### Clean up Docker Containers 
+```
+$ docker container stop $(docker container ls -q)
+$ docker container rm $(docker container ls -qa)
+```
+
+### Docker compose
+change directory which has docker-compose.yml file
+
+```
+$ docker-compose build
+$ docker-compose up --scale app=2 -d
+```
+
+Open your web browser(Firefox recommended) and navigate following url and click Refresh Button several times
+* [http://localhost:8080](http://localhost:8080)
+
+### Clean up Docker Compose
+```
+$ docker-compose down
+```
