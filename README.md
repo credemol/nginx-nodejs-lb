@@ -95,7 +95,10 @@ change directory which has docker-compose.yml file
 
 ```
 $ docker-compose build
+$ docker image ls
+
 $ docker-compose up --scale app=2 -d
+$ docker container ls
 ```
 
 Open your web browser(Firefox recommended) and navigate following url and click Refresh Button several times
@@ -114,4 +117,24 @@ The IP address can be different. If then use your docker machine IP address
 ### Clean up Docker Compose
 ```
 $ docker-compose down
+```
+
+## Using Kubernetes
+
+### Create a deployment with YAML file.
+You can create a deployment with a deployment description file by running following command
+
+```
+$ kubectl create -f ./kubernetes/app3-deployment.yml
+$ kubectl get deployments -o wide
+```
+
+### Create a service with YAML file.
+You can create a service with a service description file by running following command
+
+```
+$ kubectl create -f ./kubernetes/app3-service.yml
+$ kubectl get svc -o wide
+
+$ minikube service lb-app3 --url
 ```

@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: lb-app3
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lb-app3
+        tier: backend
+    spec:
+      containers:
+      - name: lb-app3
+        image: load-balanced-app
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: 8080
