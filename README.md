@@ -11,6 +11,70 @@ $ git config --bool core.bare false
 $ git reset --hard
 ```
 
+## Docker Basic
+
+There are several types of applications printing 'Hello World'
+* echo 
+* java
+* node
+* python
+
+```
+$ cd helloworld
+```
+
+### HelloWorld - echo on ubuntu
+
+```
+
+$ docker build -t helloworld-echo -t Dockerfile-echo .
+$ docker image ls
+
+$ docker run -it helloworld-echo
+
+$ docker run -d --name=echo1 helloworld-echo
+$ docker container logs echo1
+```
+
+### HelloWorld - Java on openjdk8:alpine
+
+```
+$ javac -d . HelloWorld.java
+
+$ docker build -t helloworld-java -t Dockerfile-java .
+$ docker image ls
+
+$ docker run -it helloworld-java
+
+$ docker run -d --name=java1 helloworld-java
+$ docker container logs java1
+```
+
+### HelloWorld - Node.JS
+
+```
+$ docker build -t helloworld-nodejs -t Dockerfile-nodejs .
+$ docker image ls 
+
+$ docker run -it helloworld-nodejs
+
+$ docker run -d --name=nodejs1 helloworld-nodejs
+$ docker container logs nodejs1
+```
+
+### HelloWorld - Python3
+
+```
+$ docker build -t helloworld-python -t Dockerfile-python .
+$ docker image ls
+
+$ docker run -it helloworld-python
+
+$ docker run -d --name=python1 helloworld-python
+$ docker container logs python1
+```
+
+
 ## Build Docker Image and Run Containers
 Switch brance to branch 'each-container'
 
@@ -120,21 +184,3 @@ $ docker-compose down
 ```
 
 ## Using Kubernetes
-
-### Create a deployment with YAML file.
-You can create a deployment with a deployment description file by running following command
-
-```
-$ kubectl create -f ./kubernetes/app3-deployment.yml
-$ kubectl get deployments -o wide
-```
-
-### Create a service with YAML file.
-You can create a service with a service description file by running following command
-
-```
-$ kubectl create -f ./kubernetes/app3-service.yml
-$ kubectl get svc -o wide
-
-$ minikube service lb-app3 --url
-```

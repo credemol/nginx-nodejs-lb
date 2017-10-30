@@ -1,0 +1,5 @@
+FROM node
+RUN mkdir -p /usr/src/app
+COPY helloworld.js /usr/src/app
+CMD node /usr/src/app/helloworld
+#CMD ["node",  "/usr/src/app/helloworld"]

@@ -1,0 +1,4 @@
+FROM ubuntu
+
+#CMD ["echo", "Hello World"]
+CMD echo "[ECHO] Hello World! It is " $(date)

@@ -1,0 +1,5 @@
+FROM python:3.6.3-alpine3.6
+
+RUN mkdir -p /usr/src/app
+COPY helloworld.py /usr/src/app
+CMD python /usr/src/app/helloworld.py
