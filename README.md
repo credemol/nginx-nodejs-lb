@@ -15,9 +15,9 @@ $ git reset --hard
 
 There are several types of applications printing 'Hello World'
 * [echo](./helloworld/Dockerfile-echo) 
-* java
-* node
-* python
+* [java](./helloworld/Dockerfile-java)
+* [node](./helloworld/Dockerfile-nodejs)
+* [python](./helloworld/Dockerfile-python)
 
 ```
 $ cd helloworld
@@ -38,6 +38,9 @@ $ docker container logs echo1
 
 ### HelloWorld - Java on openjdk8:alpine
 
+You can see the source file. 
+* [HelloWorld.java](./helloworld/HelloWorld.java)
+
 ```
 $ javac -d . HelloWorld.java
 
@@ -52,6 +55,9 @@ $ docker container logs java1
 
 ### HelloWorld - Node.JS
 
+You can see the source file. 
+* [helloworld.js](./helloworld/helloworld.js)
+
 ```
 $ docker build -t helloworld-nodejs -t Dockerfile-nodejs .
 $ docker image ls 
@@ -63,6 +69,8 @@ $ docker container logs nodejs1
 ```
 
 ### HelloWorld - Python3
+You can see the source file. 
+* [helloworld.py](./helloworld/helloworld.py)
 
 ```
 $ docker build -t helloworld-python -t Dockerfile-python .
