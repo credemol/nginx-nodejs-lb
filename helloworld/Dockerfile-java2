@@ -1,0 +1,7 @@
+FROM openjdk:8-jdk-alpine
+
+RUN mkdir -p /usr/src/app
+COPY HelloWorld.java /usr/src/app
+RUN javac -d /usr/src/app /usr/src/app/HelloWorld.java
+
+CMD java -cp /usr/src/app com.acme.docker.HelloWorld
