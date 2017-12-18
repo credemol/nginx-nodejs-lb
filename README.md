@@ -122,7 +122,19 @@ The IP address can be different. If then use your docker machine IP address
 * [http://192.168.99.100:8081](http://192.168.99.100:8081)
 * [http://192.168.99.100:8082](http://192.168.99.100:8082)
 
+#### to get docker container ip address
+
+```
+$ docker inspect app_1
+$ docker inspect app_2
+
+$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' app_1
+$ docker inspect -f '{{ .NetworkSettings.IPAddress }}' app_2
+```
+
 ### Containerize Nginx
+
+#### nginx.conf
 ```
 $ cd nginx-docker
 
